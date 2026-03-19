@@ -21,7 +21,7 @@ Wait for all subagents to complete before proceeding.
 Once all Phase 1 reports exist:
 
 1. Read all four intermediate reports
-2. Search the web for current best practices on migrating the identified tech stack to **.NET** (backend) and **React.js** (frontend), including framework migration paths, recommended .NET/React.js replacements for current dependencies, and industry patterns for this domain
+2. Search the web for current best practices on migrating the identified tech stack to **TypeScript/Node.js** on **modern AWS serverless architecture** (Lambda, API Gateway, DynamoDB, EventBridge, CDK, Step Functions), including framework migration paths, recommended TypeScript/AWS replacements for current dependencies, and industry patterns for this domain
 3. **Use the modernization-strategist agent** to synthesize all findings and produce `./reports/intermediate/05-modernization-strategy.md`
 
 ## Phase 3: Final Synthesis
@@ -55,7 +55,16 @@ After all intermediate reports are complete, YOU (the main agent) must produce t
 [Synthesized from 04-security-review.md — risk summary, priority remediations, dependency vulnerabilities]
 
 ## 7. Modernization Roadmap
-[Synthesized from 05-modernization-strategy.md — bounded contexts, service separation recommendations with impact-effort matrix, phased roadmap]
+[Synthesized from 05-modernization-strategy.md — bounded contexts, service separation recommendations with impact-effort matrix, phased roadmap targeting TypeScript/Node.js on AWS serverless]
+
+### Target Architecture
+- **Backend:** TypeScript/Node.js on AWS Lambda + API Gateway
+- **Frontend:** React + Next.js (TypeScript) on CloudFront
+- **Data:** DynamoDB / Aurora Serverless v2
+- **Events:** EventBridge + Step Functions + SQS
+- **IaC:** AWS CDK (TypeScript)
+- **Auth:** Amazon Cognito
+- **Observability:** CloudWatch + X-Ray
 
 ### Priority Matrix
 | # | Recommendation | Impact | Effort | Priority | Phase |
