@@ -1,8 +1,6 @@
 # Kiro Modernization Discovery
 
-A set of [Kiro IDE](https://kiro.dev) [custom subagents](https://kiro.dev/docs/chat/subagents/) for running comprehensive, read-only codebase audits. Five specialized agents analyze a codebase's technology stack, architecture, code quality, security posture, and modernization path — producing structured markdown reports without modifying any source code.
-
-The agents are orchestrated by a single prompt (`kiro-codebase-audit-prompt.md`) that runs them in parallel, synthesizes their findings, and produces a consolidated audit report with a phased modernization roadmap.
+This repository contains a set of [Kiro IDE](https://kiro.dev) [custom subagents](https://kiro.dev/docs/chat/subagents/) for running comprehensive, read-only codebase audits. Five specialized agents work in parallel to analyze a codebase's technology stack, architecture, code quality, security posture, and modernization path — producing structured markdown reports without modifying any source code. A single orchestration prompt (`kiro-codebase-audit-prompt.md`) coordinates all five agents, synthesizes their findings, and produces a consolidated audit report with a phased modernization roadmap.
 
 ## Subagents
 
