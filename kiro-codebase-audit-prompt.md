@@ -3,7 +3,6 @@ I need a comprehensive, read-only audit of this codebase. You must NOT write or 
 ## Setup
 
 1. Create the output directory: `mkdir -p ./reports/intermediate`
-2. Verify the custom subagents are available in `.kiro/agents/`
 
 ## Phase 1: Parallel Discovery (use subagents)
 
