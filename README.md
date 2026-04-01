@@ -17,15 +17,40 @@ A toolkit for running comprehensive, read-only codebase audits using [Kiro IDE](
 
 The modernization-strategist agent is preconfigured to recommend migration to **TypeScript/Node.js on AWS serverless** (Lambda, API Gateway, DynamoDB, EventBridge, CDK, etc.). If your target stack is different — say Go, Python, Java, or a container-based architecture — edit `.kiro/agents/modernization-strategist.md` and update the target stack, migration mappings, and phased roadmap sections to match your preferred technologies.
 
-## Quick Start
+## How to Use
 
-1. Clone this repo into the root of the project you want to audit (or copy the `.kiro/agents/` folder and `kiro-codebase-audit-prompt.md` into your project)
-2. Open the project in Kiro IDE
-3. Select **Claude Opus 4.6** from the model picker
-4. Paste the contents of `kiro-codebase-audit-prompt.md` into Kiro chat
-5. Reports are written to `./reports/` — the final output is `./reports/CODEBASE-AUDIT-REPORT.md`
+### 1. Clone this repo
 
-No setup scripts required — the agents are ready to use as-is.
+```bash
+git clone https://github.com/stephensalim/kiro-modernization-discovery.git
+cd kiro-modernization-discovery
+```
+
+### 2. Bring in the codebase you want to audit
+
+Clone or copy your target codebase into this directory. For example:
+
+```bash
+# Clone a repo directly
+git clone https://github.com/your-org/your-app.git target-app
+
+# Or copy an existing local project
+cp -r /path/to/your/project ./target-app
+```
+
+The folder name doesn't matter — just place it somewhere inside this workspace so Kiro can see it.
+
+### 3. Open in Kiro IDE and run the audit
+
+1. Open this folder in [Kiro IDE](https://kiro.dev)
+2. Select **Claude Opus 4.6** from the model picker
+3. Paste the contents of `kiro-codebase-audit-prompt.md` into Kiro chat (or reference it with `#kiro-codebase-audit-prompt.md`)
+4. Tell Kiro which folder to audit, e.g.: *"Run the codebase audit against the `target-app/` folder"*
+5. The agents will run in parallel and produce reports in `./reports/`
+
+### 4. Review the output
+
+The final consolidated report lands at `./reports/CODEBASE-AUDIT-REPORT.md`. Intermediate reports from each agent are in `./reports/intermediate/`.
 
 ## Agents
 
