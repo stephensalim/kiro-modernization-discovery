@@ -13,6 +13,10 @@ A toolkit for running comprehensive, read-only codebase audits using [Kiro IDE](
 | `.kiro/agents/security-reviewer.md` | Identifies auth weaknesses, input validation gaps, hardcoded secrets, dependency CVEs, and supply chain risks |
 | `.kiro/agents/modernization-strategist.md` | Synthesizes all findings into bounded contexts, service separation recommendations, and a phased roadmap |
 
+## Default Target Stack
+
+The modernization-strategist agent is preconfigured to recommend migration to **TypeScript/Node.js on AWS serverless** (Lambda, API Gateway, DynamoDB, EventBridge, CDK, etc.). If your target stack is different — say Go, Python, Java, or a container-based architecture — edit `.kiro/agents/modernization-strategist.md` and update the target stack, migration mappings, and phased roadmap sections to match your preferred technologies.
+
 ## Quick Start
 
 1. Clone this repo into the root of the project you want to audit (or copy the `.kiro/agents/` folder and `kiro-codebase-audit-prompt.md` into your project)
